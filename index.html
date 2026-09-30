@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para ti Cristina 🌸</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff5fa, #f7efff, #fffaf0);
+            overflow-x: hidden;
+            color: #5d4565;
+        }
+
+        .contenedor {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 15px;
+            position: relative;
+        }
+
+        /* TÍTULO */
+
+        h1 {
+            font-size: 42px;
+            margin: 0 0 8px;
+            color: #b45b91;
+            animation: aparecer 2s ease;
+        }
+
+        .subtitulo {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #806080;
+        }
+
+        /* RAMO */
+
+        .ramo {
+            position: relative;
+            width: 330px;
+            height: 350px;
+            margin: 10px auto;
+        }
+
+        /* TALLOS */
+
+        .tallo {
+            position: absolute;
+            width: 7px;
+            height: 220px;
+            background: #5f9b61;
+            border-radius: 10px;
+            bottom: 20px;
+            left: 50%;
+            transform-origin: bottom;
+        }
+
+        .tallo1 {
+            transform: rotate(-25deg);
+        }
+
+        .tallo2 {
+            transform: rotate(-10deg);
+        }
+
+        .tallo3 {
+            transform: rotate(10deg);
+        }
+
+        .tallo4 {
+            transform: rotate(25deg);
+        }
+
+        /* HOJAS */
+
+        .hoja {
+            position: absolute;
+            width: 55px;
+            height: 25px;
+            background: #6fa96c;
+            border-radius: 100% 0 100% 0;
+        }
+
+        .h1 {
+            left: 55px;
+            bottom: 100px;
+            transform: rotate(-25deg);
+        }
+
+        .h2 {
+            right: 55px;
+            bottom: 130px;
+            transform: rotate(25deg);
+        }
+
+        .h3 {
+            left: 90px;
+            bottom: 55px;
+            transform: rotate(20deg);
+        }
+
+        .h4 {
+            right: 90px;
+            bottom: 65px;
+            transform: rotate(-20deg);
+        }
+
+        /* LIRIOS */
+
+        .lirio {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            animation: flotar 3s ease-in-out infinite;
+        }
+
+        .lirio1 {
+            top: 20px;
+            left: 15px;
+        }
+
+        .lirio2 {
+            top: 0;
+            left: 110px;
+            animation-delay: .5s;
+        }
+
+        .lirio3 {
+            top: 25px;
+            right: 10px;
+            animation-delay: 1s;
+        }
+
+        .lirio4 {
+            top: 95px;
+            left: 70px;
+            animation-delay: 1.5s;
+        }
+
+        .petalo {
+            position: absolute;
+            width: 48px;
+            height: 75px;
+            background: white;
+            border-radius: 70% 70% 20% 20%;
+            left: 31px;
+            top: 18px;
+            transform-origin: bottom center;
+            box-shadow: 0 0 8px rgba(150, 100, 150, .15);
+        }
+
+        .petalo:nth-child(1) {
+            transform: rotate(0deg);
+        }
+
+        .petalo:nth-child(2) {
+            transform: rotate(60deg);
+        }
+
+        .petalo:nth-child(3) {
+            transform: rotate(120deg);
+        }
+
+        .petalo:nth-child(4) {
+            transform: rotate(180deg);
+        }
+
+        .petalo:nth-child(5) {
+            transform: rotate(240deg);
+        }
+
+        .petalo:nth-child(6) {
+            transform: rotate(300deg);
+        }
+
+        .centro {
+            position: absolute;
+            width: 28px;
+            height: 28px;
+            background: #f5d85c;
+            border-radius: 50%;
+            top: 42px;
+            left: 42px;
+            z-index: 5;
+            box-shadow: 0 0 10px #f5d85c;
+        }
+
+        .polen {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #9a6736;
+            border-radius: 50%;
+            z-index: 6;
+        }
+
+        .p1 {
+            top: 35px;
+            left: 47px;
+        }
+
+        .p2 {
+            top: 45px;
+            left: 72px;
+        }
+
+        .p3 {
+            top: 62px;
+            left: 43px;
+        }
+
+        .p4 {
+            top: 70px;
+            left: 65px;
+        }
+
+        /* GATITOS */
+
+        .gatitos {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 35px;
+            margin-top: -20px;
+        }
+
+        .gato {
+            position: relative;
+            width: 120px;
+            height: 125px;
+            animation: saltito 3s ease-in-out infinite;
+        }
+
+        .gato:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .cabeza {
+            position: absolute;
+            width: 100px;
+            height: 85px;
+            background: #f2b8c8;
+            border-radius: 50% 50% 45% 45%;
+            left: 10px;
+            top: 15px;
+        }
+
+        .oreja {
+            position: absolute;
+            width: 38px;
+            height: 45px;
+            background: #f2b8c8;
+            top: -18px;
+            transform: rotate(35deg);
+            border-radius: 10px 35px 5px 35px;
+        }
+
+        .oreja1 {
+            left: 5px;
+        }
+
+        .oreja2 {
+            right: 5px;
+            transform: rotate(55deg);
+        }
+
+        .ojo {
+            position: absolute;
+            width: 12px;
+            height: 17px;
+            background: #49364e;
+            border-radius: 50%;
+            top: 40px;
+        }
+
+        .ojo1 {
+            left: 27px;
+        }
+
+        .ojo2 {
+            right: 27px;
+        }
+
+        .nariz {
+            position: absolute;
+            left: 45px;
+            top: 58px;
+            width: 12px;
+            height: 9px;
+            background: #d8789a;
+            border-radius: 50%;
+        }
+
+        .bigote {
+            position: absolute;
+            width: 35px;
+            height: 1px;
+            background: #8b687b;
+            top: 65px;
+        }
+
+        .b1 {
+            left: -20px;
+            transform: rotate(-10deg);
+        }
+
+        .b2 {
+            right: -20px;
+            transform: rotate(10deg);
+        }
+
+        .cuerpo {
+            position: absolute;
+            width: 70px;
+            height: 65px;
+            background: #f2b8c8;
+            border-radius: 50% 50% 35% 35%;
+            bottom: 0;
+            left: 25px;
+        }
+
+        .cola {
+            position: absolute;
+            width: 55px;
+            height: 65px;
+            border: 10px solid #f2b8c8;
+            border-left: 0;
+            border-bottom: 0;
+            border-radius: 0 50px 0 0;
+            right: -20px;
+            bottom: 5px;
+            transform: rotate(15deg);
+        }
+
+        /* MENSAJE */
+
+        .mensaje {
+            background: rgba(255,255,255,.75);
+            backdrop-filter: blur(5px);
+            padding: 20px 28px;
+            border-radius: 25px;
+            box-shadow: 0 8px 25px rgba(160, 100, 150, .15);
+            max-width: 500px;
+            margin-top: 25px;
+        }
+
+        .mensaje h2 {
+            margin: 0 0 10px;
+            color: #b45b91;
+            font-size: 27px;
+        }
+
+        .mensaje p {
+            margin: 0;
+            font-size: 19px;
+            line-height: 1.5;
+        }
+
+        .boton {
+            margin-top: 18px;
+            border: none;
+            background: #d987ad;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .boton:hover {
+            transform: scale(1.08);
+            background: #c76d98;
+        }
+
+        /* FLORES FLOTANDO */
+
+        .flor {
+            position: fixed;
+            font-size: 25px;
+            animation: caer linear infinite;
+            opacity: .7;
+            pointer-events: none;
+        }
+
+        .f1 {
+            left: 8%;
+            animation-duration: 8s;
+        }
+
+        .f2 {
+            left: 30%;
+            animation-duration: 10s;
+            animation-delay: 2s;
+        }
+
+        .f3 {
+            left: 60%;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        .f4 {
+            left: 85%;
+            animation-duration: 9s;
+            animation-delay: 3s;
+        }
+
+        @keyframes caer {
+            from {
+                top: -50px;
+            }
+            to {
+                top: 110vh;
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes flotar {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-8px) rotate(2deg);
+            }
+        }
+
+        @keyframes saltito {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .subtitulo {
+                font-size: 17px;
+            }
+
+            .ramo {
+                transform: scale(.85);
+                margin-top: -10px;
+                margin-bottom: -20px;
+            }
+
+            .gatitos {
+                gap: 5px;
+            }
+
+            .mensaje {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Flores decorativas -->
+    <div class="flor f1">🌸</div>
+    <div class="flor f2">🌷</div>
+    <div class="flor f3">🌸</div>
+    <div class="flor f4">🌷</div>
+
+    <div class="contenedor">
+
+        <h1>🌸 Para ti, Cristina 🌸</h1>
+
+        <div class="subtitulo">
+            Una pequeña sorpresa entre lirios y gatitos 🐱
+        </div>
+
+        <!-- RAMO DE LIRIOS -->
+
+        <div class="ramo">
+
+            <div class="tallo tallo1"></div>
+            <div class="tallo tallo2"></div>
+            <div class="tallo tallo3"></div>
+            <div class="tallo tallo4"></div>
+
+            <div class="hoja h1"></div>
+            <div class="hoja h2"></div>
+            <div class="hoja h3"></div>
+            <div class="hoja h4"></div>
+
+            <div class="lirio lirio1">
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="centro"></div>
+                <div class="polen p1"></div>
+                <div class="polen p2"></div>
+                <div class="polen p3"></div>
+                <div class="polen p4"></div>
+            </div>
+
+            <div class="lirio lirio2">
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="centro"></div>
+                <div class="polen p1"></div>
+                <div class="polen p2"></div>
+                <div class="polen p3"></div>
+                <div class="polen p4"></div>
+            </div>
+
+            <div class="lirio lirio3">
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="centro"></div>
+                <div class="polen p1"></div>
+                <div class="polen p2"></div>
+                <div class="polen p3"></div>
+                <div class="polen p4"></div>
+            </div>
+
+            <div class="lirio lirio4">
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="petalo"></div>
+                <div class="centro"></div>
+                <div class="polen p1"></div>
+                <div class="polen p2"></div>
+                <div class="polen p3"></div>
+                <div class="polen p4"></div>
+            </div>
+
+        </div>
+
+        <!-- GATITOS -->
+
+        <div class="gatitos">
+
+            <div class="gato">
+
+                <div class="cuerpo"></div>
+
+                <div class="cola"></div>
+
+                <div class="cabeza">
+
+                    <div class="oreja oreja1"></div>
+                    <div class="oreja oreja2"></div>
+
+                    <div class="ojo ojo1"></div>
+                    <div class="ojo ojo2"></div>
+
+                    <div class="nariz"></div>
+
+                    <div class="bigote b1"></div>
+                    <div class="bigote b2"></div>
+
+                </div>
+
+            </div>
+
+            <div class="gato">
+
+                <div class="cuerpo"></div>
+
+                <div class="cola"></div>
+
+                <div class="cabeza">
+
+                    <div class="oreja oreja1"></div>
+                    <div class="oreja oreja2"></div>
+
+                    <div class="ojo ojo1"></div>
+                    <div class="ojo ojo2"></div>
+
+                    <div class="nariz"></div>
+
+                    <div class="bigote b1"></div>
+                    <div class="bigote b2"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MENSAJE -->
+
+        <div class="mensaje">
+
+            <h2>🌷 Para ti, Cristina 🌷</h2>
+
+            <p>
+                ¿Sabes qué son los lirios? 🌸
+                <br><br>
+                Son flores muy bonitas...
+                pero creo que se ven todavía más bonitas
+                cuando se regalan con cariño. 🐱💗
+            </p>
+
+            <button class="boton" onclick="mostrarMensaje()">
+                Haz clic aquí 🌸
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function mostrarMensaje() {
+
+            alert("Para ti, Cristina 🌸🐱 Nunca dejes de sonreír.");
+
+        }
+
+    </script>
+
+</body>
+</html>
